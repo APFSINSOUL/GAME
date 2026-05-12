@@ -1,0 +1,9 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: аргумент: преобразование "const int" в "float", возможна потеря данных
+  (компиляция исходного файла "main.cpp")
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          C:\Users\pzyar\source\repos\example\main.cpp(280,36):
+          выполняется компиляция ссылки на экземпляр шаблон функции "std::unique_ptr<Zombie,std::default_delete<Zombie>> std::make_unique<Zombie,const int&,float&,0>(const int &,float &)"
+  
+  example.vcxproj -> C:\Users\pzyar\source\repos\example\x64\Debug\example.exe
