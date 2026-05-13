@@ -5,7 +5,6 @@
 #include <memory>
 #include <algorithm>
 
-// --- Константы игры ---
 const int WINDOW_WIDTH = 1000;
 const int WINDOW_HEIGHT = 600;
 const int GRID_ROWS = 5;
@@ -16,7 +15,7 @@ const float OFFSET_Y = 100.f;
 
 enum class ObjectType { SUNFLOWER, PEASHOOTER, ZOMBIE, SUN, PEA };
 
-// --- Базовый класс ---
+
 class GameObject {
 public:
     sf::RectangleShape shape;
@@ -43,7 +42,6 @@ public:
     }
 };
 
-// --- Растения ---
 class Plant : public GameObject {
 public:
     float lastActionTime;
@@ -66,7 +64,7 @@ public:
     Peashooter(float x, float y) : Plant(x, y, sf::Color::Green, 100, 1.5f) {}
 };
 
-// --- Горошина ---
+
 class Pea : public GameObject {
 public:
     float speed;
@@ -85,7 +83,6 @@ public:
     }
 };
 
-// --- Зомби ---
 class Zombie : public GameObject {
 public:
     float speed;
@@ -114,7 +111,7 @@ public:
     }
 };
 
-// --- Солнце ---
+
 class SunDrop : public GameObject {
 public:
     float speed;
@@ -133,7 +130,6 @@ public:
     }
 };
 
-// --- Класс Игры ---
 class Game {
 private:
     sf::RenderWindow window;
@@ -162,11 +158,9 @@ public:
 
         window.setFramerateLimit(60);
 
-        // Пробуем загрузить шрифт из системной папки Windows
         if (!font.openFromFile("C:/Windows/Fonts/arial.ttf")) {
             std::cout << "WARNING: Could not load arial.ttf" << std::endl;
-            // Если шрифт не загрузился, текст просто не будет отображаться
-            // Но игра продолжит работу
+            
         }
         else {
             std::cout << "Font loaded successfully!" << std::endl;
@@ -180,7 +174,7 @@ public:
         messageText.setFillColor(sf::Color::Red);
         messageText.setPosition(sf::Vector2f(WINDOW_WIDTH / 4.f, WINDOW_HEIGHT / 2.f));
 
-        // Инициализация остальных переменных
+        
         sunResource = 150;
         zombieSpawnTimer = 0;
         zombieSpawnInterval = 5.0f;
